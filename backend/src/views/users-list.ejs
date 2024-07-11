@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head") %>
+</head>
+
+<body class="bg-ligh-grey bg-img">
+    
+    <header class="bg-grey p-20">
+        <%- include("partials/header") %>        
+    </header>
+
+    <main>
+        <article class="mx-auto bg-white my-1 w-50 md-w-50 lg-w-25 b-product">        
+            <div class="bt-1 border-grey p-1 relative flex flex-wrap">
+                <h2 class="flex-buttom p-10">Listado de Usuarios</h2>
+        
+                <div>
+                <div class="text-xl mr-1 mx-auto">
+                              
+                    <% users.forEach(user => { %>
+                        <div class="text-xl mr-1 mx-auto box-list">
+                            <a class="a-center w-full" href="/<%= user.id %>/users">
+                                <img class="flex-buy w-50 mx-auto m-pic" src="/images/users<%= user.avatar %>" alt="Imagen del usuario" />
+                                <h1><%= user.firstName %> <%= user.lastName %></h1>
+                            </a>
+                        </div>
+                    <% }); %>
+                </div>
+           
+        </article>
+</main>
+    
+<%- include("partials/footer") %>
+
+</body>  
+</html>

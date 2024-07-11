@@ -1,0 +1,72 @@
+<header class="bg-grey p-20">
+
+  <div class="top-header">
+      <div class="h-text1">
+          <h5>HASTA 12 CUOTAS FIJAS | ENVÍO GRATIS A PARTIR DE $ 30.000</h5>
+      </div>
+      <div class="h-text2">
+          <h5><i class="fa-solid fa-location-dot" style="color: #000000;"></i> Av. del Libertador 15400 - Buenos Aires, Argentina</h5>
+      </div>
+  </div>
+
+  <div class="flex-header">
+      <div class="m-logo">
+          <img src="/images/logo.png" class="logo" alt="Logo BikeWorld" onclick="window.location='/'">
+      </div>
+        
+      
+      <div class="search-container">
+        <form action="/search" method="GET" onsubmit="return validateSearch()" class="flex-user">
+          <input type="text" name="search" id="search" placeholder="Buscar bicicletas..." class="search-input">
+          <button type="submit" id="search-button">Buscar</button>
+        </form>    
+      </div>
+
+
+
+     <div class="m-hamburger">
+        <a href="#" class="hamburguer-buttom">
+        <i class="fa-solid fa-bars"></i>
+        </a>  
+
+        <div class="flex-img m-right">
+          <% if (userData) { %> 
+          <h4 class="m-6">Hola </h4>
+          <h4 class="m-6"><%= userData.firstName %></h4>
+          <h4 class="m-6"><%= userData.lastName %></h4> 
+        <% } %>
+      </div>
+        
+        <div class="user-cart m-user-cart flex-user">
+            <% if (userData) { %> 
+              <a href="/profile" class="w flex-img">
+                <img src="<%= userData.avatar %>" alt="Imagen de perfil" class="img-perfil">
+              </a> 
+              <a href="/logout">Cerrar sesion</a>
+            <% } else { %>
+              <a href="/login"><i class="fa-solid fa-user fa-lg p-right"></i>Login</a>
+            <% } %>
+            <% if (userData) { %>
+            <a href="/cart"><i class="fa-solid fa-cart-shopping fa-lg m-left"></i>$ <%= total %></a>
+            <% } %>
+          </div>
+      </div>          
+  </div> 
+
+  <nav class="main-navbar">
+      <ul class="dropdown-box">
+        
+          <% if (!userData) { %>
+          <li><a href="/register">REGISTRATE</a></li> 
+          <% } else { %> 
+          <li><a href="/profile">MI PERFIL</a></li> 
+          <% } %> 
+          <li><a href="/bikes">PRODUCTOS</a></li> 
+          
+          <li><a href="/cart">SHOP</a></li>
+      </ul>
+  </nav>        
+
+  <script type="text/javascript" src="/js/products/search-validator.js" defer></script>
+      
+</header>

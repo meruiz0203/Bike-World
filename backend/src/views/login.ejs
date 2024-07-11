@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include("partials/head") %>
+  <script type="text/javascript" src="/js/users/login-validator.js" defer></script>
+  <style>
+      .errorMsg {
+          display: none;
+          color: red;
+      }
+  
+      .display {
+          display: block;
+      }
+  </style>
+</head>
+
+<body class="bg-ligh-grey bg-img">
+    
+    <header class="bg-grey p-20">
+      <%- include("partials/header") %>        
+    </header>
+  
+
+    <main class="m-main-log"> 
+      
+
+        <form action="/login" method="POST" class="bg-ligh-grey flex-log" id="form">
+
+            <div>
+              <h2 class="center"> Login </h2>
+              <div class="font1 mt-5 mb-5">
+              <p>
+                <input type="email" 
+                name="email" 
+                id="email" 
+                placeholder="Email"  
+                value="<%= locals.oldData ? locals.oldData.email : null %>">
+                <span class = "errorMsg" id="emailError"> </span>
+              </p>
+              </div>
+              <% if (locals.errors && errors.email) { %>
+                <div class="red-text">
+                  <%= errors.email.msg %> 
+                </div>  
+              <% } %>
+
+          
+              <div class="font1 mt-5 mb-5">
+                <p>
+                  <input type="password" name="password" id="password" placeholder="Contraseña">
+                  <span class = "errorMsg" id="passwordError"> </span>
+                </p>
+                <% if (locals.errors && errors.password) { %>
+                  <div class="red-text">
+                    <%= errors.password.msg %> 
+                  </div>  
+                <% } %>
+                <p class="center"><a href="#"> Olvidé mi contraseña </a></p>
+              </div>
+              
+            </div> 
+            <label for="recordame"> Recordame
+              <input type="checkbox" name="recordame" value="true">  
+            </label>
+             
+            <input type="submit" value="Ingresá" class="ml mt-2 bold boton-formulario">
+          <div class="ml relative p-10">
+            <a href="#" class="mr"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class=""><i class="fab fa-google-plus-g"></i></a>
+        </div>
+        <span class="ml font-size-10">o utiliza tu cuenta</span>  
+
+        <div class="ml">
+        <p class="font1 mt-5 mb-5">
+         Aún no sos usuario?
+        <a href="/register"> Registrate </a>   
+
+        </p>
+      </div>    
+          </form>       
+</main>    
+    
+  <%- include("partials/footer") %>
+
+  </body>  
+</html>

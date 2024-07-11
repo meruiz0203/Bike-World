@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head") %>
+</head>
+
+<body class="bg-ligh-grey bg-img">
+    
+    <header class="bg-grey p-20">
+        <%- include("partials/header") %>        
+    </header>
+
+    <main>
+        <article class="mx-auto bg-white my-1 w-50 md-w-50 lg-w-25 b-product"> 
+            <div class="flex-buttom p-10">
+                <button type="button" class="boton-formulario">
+                    <a href="/<%= user.id %>/user" class="c-white">Editar usuario</a>
+                </button>
+            </div>
+        
+        <div class="bt-1 mx-auto border-grey p-1 relative flex flex-wrap">
+
+            <img class="a-center w-50 mx-auto m-pic" src="/images/users<%= user.avatar %>" alt="Imagen del usuario" />
+            
+            <p class="text-xl mr-1">
+                <%= user.firstName%>     
+                </p>
+            <p class="text-xl mr-1">
+                <%= user.lastName%>     
+            </p>
+            <p class="text-xl mr-1">
+                <%= user.email%>
+            </p> 
+            <p class="text-xl mr-1">
+                <%= user.birthday%>
+            </p> 
+            <p class="text-xl mr-1">
+                <%= user.phone%>
+            </p> 
+            <p class="text-xl mr-1">
+                <%= user.address%>
+            </p> 
+            <p class="text-xl mr-1">
+                <%= user.rol%>
+            </p> 
+            
+        </div>
+        </article>
+</main>
+    
+<%- include("partials/footer") %>
+
+</body>  
+</html>

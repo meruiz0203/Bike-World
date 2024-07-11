@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include("partials/head") %>
+    <title>Search Result</title>
+  </head>
+  <body class="bg-ligh-grey bg-img">
+    <header><%- include("partials/header") %></header>
+
+    <article>
+    <div class="bt-1 border-grey p-1 relative flex flex-wrap mx-auto bg-white my-1 w-50 md-w-50 lg-w-25 b-product">
+
+      
+
+      <div>
+        <h2 class="flex-buttom p-10">Resultados de la búsqueda:</h2>
+      </div>
+
+      <div>
+        <% if (!bikes || bikes.length === 0) { %>
+          <div>
+              <h2 style="color: tomato">
+                  No hay productos que coincidan con esa búsqueda
+              </h2>
+          </div>
+      <% } else { %>
+          <% bikes.forEach(bike => { %>
+            <%- console.log(bike) %>
+              <%- include("partials/product-detail", { bike }) %>
+          <% }); %>
+      <% } %>
+    </div>
+  </article>
+    <footer class="footer"><%- include("partials/footer") %></footer>
+  </body>
+</html>

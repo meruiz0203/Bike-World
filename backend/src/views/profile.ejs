@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include("partials/head") %>
+</head>
+  
+<body class="bg-ligh-grey bg-img">
+    
+    <header class="bg-grey p-20">
+        <%- include("partials/header") %>        
+    </header>
+
+    <main>
+        <article class="mx-auto bg-white my-1 w-50 md-w-50 lg-w-25 b-product">  
+            <h1 class="register">Mi Perfil</h1>
+        <% if (userData) { %> 
+        <div class="flex-profile">
+            <img class="a-center w-50 mx-auto m-pic img-profile" src="<%= userData.avatar %>" alt="Imagen del usuario" />
+        </div>    
+        
+        <div class="bt-1 mx-auto border-grey p-1 relative flex flex-wrap">
+            
+            <p class="text-xl mr-1">  
+                Nombre:
+                <%= userData.firstName%>     
+                </p>
+            <p class="text-xl mr-1"> 
+                Apellido: 
+                <%= userData.lastName%>     
+            </p>
+            <p class="text-xl mr-1"> 
+                Email: 
+                <%= userData.email%>
+            </p> 
+            <p class="text-xl mr-1"> 
+                Fecha de nacimiento: 
+                <%= userData.birthday%>
+            </p> 
+            <p class="text-xl mr-1"> 
+                Numero de contacto:
+                <%= userData.phone%>
+            </p> 
+            <p class="text-xl mr-1"> 
+                Domicilio:
+                <%= userData.address%>
+            </p> 
+            <p class="text-xl mr-1"> 
+                Rol de Usuario:
+                <%= userData.role%>
+            </p> 
+             
+        </div> 
+        <div class="flex-buttom p-10">
+            <button type="button" class="boton-formulario">
+                    <a href="/<%= userData.id %>/user" class="c-white">Editar mi usuario</a>
+            </button>
+        </div> 
+        <% } %>
+           
+        </article>
+</main>
+        
+    
+<%- include("partials/footer") %>
+
+</body>  
+</html>

@@ -1,0 +1,50 @@
+/* Estilos CSS para la sección de edición del usuario */
+.b-product {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Estilos CSS para el botón de editar usuario */
+.boton-formulario {
+    background-color: #d5b516;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color  0.3s ease, ;
+}
+
+.boton-formulario:hover {
+    background-color: #4aa0da;
+    color: #000000;
+}
+
+/* Estilos CSS para la imagen del usuario */
+.m-pic {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Animación fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comienza con opacidad 0 */
+    }
+    to {
+        opacity: 1; /* Termina con opacidad 1 */
+    }
+}
+
+/* Estilos CSS para el texto del usuario */
+.flex-buttom p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.text-xl {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}

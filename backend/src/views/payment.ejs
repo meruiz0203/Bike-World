@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include("partials/head") %>
+</head>
+
+<body class="bg-ligh-grey bg-img">
+    
+    <header class="bg-grey p-20">
+      <%- include("partials/header") %>  
+    </header>
+    
+    <main>
+
+      <form action="/process-payment" method="POST" class="box-cart">
+        <h1>Pagá Aquí </h1>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio unitario</th>
+             </tr>
+          </thead>
+          <tbody>
+            <% for (let i = 0; i < cartProducts.length; i++) { %>
+              <tr>
+                <td><%= cartProducts[i].productBrand %> <%= cartProducts[i].productModel %></td>
+                <td>$ <%= cartProducts[i].productPrice.toFixed(2) %></td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+
+
+        <h2 class="flex-buy">Método de envío</h2>
+        <div class="center my-1 shipment">
+            <label> Envío en 24 horas ($5.000) </label>
+            <input type="radio" name="shipping_method" value="24_hours" onclick="updateTotal(5000)"> 
+        </div>
+        <div class="center my-1 shipment">
+            <label>Envío por encomienda ($3.000)</label>
+            <input type="radio" name="shipping_method" value="shipping" onclick="updateTotal(3000)"> 
+        </div>
+        <div class="center my-1 shipment">
+          <label>Sin envío</label>
+          <input type="radio" name="shipping_method" id="sinEnvio" value="none" onclick="updateTotal(0)">
+      </div>
+        
+        <div class="flex-buy">
+          <h2>Total $ <span id="totalAmountWithoutFees"><%= total.toFixed(2) %></span></h2>
+      </div>
+      <div class="flex-buy">
+          <h2>Total $ <span id="totalAmount"><%= total.toFixed(2) %></span></h2>
+        </div> 
+        
+
+        <div class="p-10">
+        <label for="cardType">Selecciona tu tarjeta:</label>
+        <select id="cardType" name="cardType">
+            <option value="visa">Visa</option>
+            <option value="mastercard">MasterCard</option>
+            <option value="amex">American Express</option>
+            <option value="cabal">Cabal</option>
+            <option value="naranja">Naranja</option>
+        </select>
+        </div> 
+        <div class="p-10 center"> 
+          <label for="cuotas">Cantidad de cuotas:</label>
+          <select id="cuotas" name="cuotas" onchange="updateTotalWithCuotas()">
+            <option value="1">1 cuota</option>
+            <option value="3">Ahora 3 </option>
+            <option value="6"> Ahora 6 </option>
+            <option value="12">Ahora 12 </option>
+            <option value="18">Ahora 18 </option>
+            <option value="24">Ahora 24 </option>
+        </select>
+        </div>
+
+        <div >
+
+            <h3>Detalles de la tarjeta</h3>
+    
+            <form id="cardDetailsForm">
+                <label for="cardHolderName">Nombre y Apellido del Titular:</label>
+                <input type="text" id="cardHolderName" name="cardHolderName" pattern="[A-Za-z ]+" required>
+        
+                <label for="cardNumber">Número de Tarjeta:</label>
+                <input type="number" id="cardNumber" name="cardNumber" pattern="[0-9]{16}" required>
+        
+                <label for="securityCode">Código de Seguridad:</label>
+                <input type="number" id="securityCode" name="securityCode" pattern="[0-9]{3}" required>
+        
+                <label for="billingAddress">Dirección de entrega:</label>
+                <input type="text" id="billingAddress" name="billingAddress" required>
+            </form>
+
+            <script>
+              // Inicializa el costo de envío
+              let costoEnvio = 0;
+              let envioAplicado = false; // Variable para rastrear si se aplicó un envío
+          
+              function updateTotal(shippingCost) {
+
+                resetForm();
+
+                  let total = parseFloat("<%= total %>");
+
+                  // Actualiza el costo de envío solo si se especifica un nuevo costo
+                  if (shippingCost !== undefined) {
+                      costoEnvio = shippingCost;
+                  }
+          
+                  // Suma el nuevo costo de envío
+                  if (envioAplicado) {
+                  total += costoEnvio;
+                  }
+          
+                  // Actualiza la variable de estado del envío
+                  envioAplicado = true;
+          
+                  document.getElementById('totalAmount').innerText = total.toFixed(2);
+                  document.getElementById('totalAmountWithoutFees').innerText = total.toFixed(2);
+              }
+          
+              function updateTotalWithCuotas() {
+                  let cuotas = parseInt(document.getElementById("cuotas").value);
+                  let total = parseFloat("<%= total %>") + costoEnvio; // Asegúrate de agregar el costo de envío
+          
+                  // Agregar interés del 9.61% para 3 cuotas 
+                  switch (cuotas) {
+                      case 1: total *= 1; break;
+                      case 3: total *= 1.0961; break;
+                      case 6: total *= 1.1778; break;
+                      case 12: total *= 1.3131; break;
+                      case 18: total *= 1.4186; break;
+                      case 24: total *= 1.5019; break;
+                  }
+          
+                  // Calcula el nuevo total dividiendo por el número de cuotas
+                  let nuevoTotal = total / cuotas;
+          
+                  var cuotasTexto = cuotas === 1 ? 'cuota' : 'cuotas';
+          
+                  // Actualiza el elemento HTML con el nuevo total y el número de cuotas
+                  document.getElementById('totalAmount').innerText = ` ${nuevoTotal.toFixed(2)} (${cuotas} ${cuotasTexto})`;
+                  document.getElementById('totalAmountWithoutFees').innerText = total.toFixed(2);
+              }
+              function resetForm() {
+               // Resetea los campos del formulario de tarjeta y cuotas
+              document.getElementById('cardType'). selectedIndex = 0;
+              document.getElementById('cuotas').selectedIndex = 0; // Reinicia el valor del select de cuotas
+    }
+          </script>
+      
+        
+
+        <a class="blue-text boton-formulario" href="/delivery">PAGAR</a></li> 
+  
+        </div>
+
+   </form>
+    </main>
+
+    <%- include("partials/footer") %>
+
+</body>
+</html>

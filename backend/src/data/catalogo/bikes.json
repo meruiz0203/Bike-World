@@ -1,0 +1,112 @@
+[
+  {
+    "id": 2,
+    "marca": "specialized",
+    "nombre": "E-MTB",
+    "rodado": "27.5",
+    "tamaño": "m",
+    "categoria": "electrica",
+    "precio": 5138500,
+    "descripcion": "La bicicleta E-MTB cuenta con asistencia eléctrica. Te permite recorrer terrenos mucho más complejos y realizar recorridos más largos sin tanto desgaste físico. La mejor parte: desde el punto de vista ambiental son inofensivas, ya que no contaminan, no generan ruido ni emisiones. VELOCIDAD MÁXIMA: 25km/hAUTONOMÍA DE BATERÍA: 40kmTIEMPO DE CARGA: 5-6HS POTENCIA: 240W, 36V",
+    "img": "/images/products/Electrica-1.jpg"
+  },
+  {
+    "id": 3,
+    "marca": "everyday",
+    "nombre": "Everyday Tyron",
+    "rodado": "20",
+    "tamaño": "s",
+    "categoria": "freestyle",
+    "precio": 200500,
+    "descripcion": "Para realizar tus mayores aventuras. Y con potencia de sobra para llevarte a la oficina. Equipada para pedalear por la ciudad. Muévete de una forma más rápida y sostenible.",
+    "img": "/images/products/Freestyle.jpg"
+  },
+  {
+    "id": 4,
+    "marca": "hoodrich",
+    "nombre": "Hoodrich BMX",
+    "rodado": "20",
+    "tamaño": "s",
+    "categoria": "freestyle",
+    "precio": 250000,
+    "descripcion": "Para romper toda la plaza con tus piruetas! Y con potencia de sobra para llevarte a la oficina. Equipada para pedalear por la ciudad. Muévete de una forma más rápida y sostenible.",
+    "img": "/images/products/Freestyle-1.jpg"
+  },
+  {
+    "id": 5,
+    "marca": "wilier",
+    "nombre": "Wilier Plus",
+    "rodado": "29",
+    "tamaño": "l",
+    "categoria": "mountain-bike",
+    "precio": 800000,
+    "descripcion": "Suficientemente ligera como para llevarla en el tren. Y con potencia de sobra para llevarte a la oficina. Equipada para pedalear por la ciudad. Muévete de una forma más rápida y sostenible.",
+    "img": "/images/products/MTB.jpg"
+  },
+  {
+    "id": 6,
+    "marca": "fuji",
+    "nombre": "Fuji Place",
+    "rodado": "28",
+    "tamaño": "m",
+    "categoria": "mountain-bike",
+    "precio": 900900,
+    "descripcion": "Tu mejor aliada en la naturaleza, desplegable para llevarla en el auto. Y con potencia de sobra para llevarte a la oficina. Equipada para pedalear por la ciudad. Muévete de una forma más rápida y sostenible.",
+    "img": "/images/products/MTB-1.jpg"
+  },
+  {
+    "id": 7,
+    "marca": "slp",
+    "nombre": "Federosa",
+    "rodado": "26",
+    "tamaño": "m",
+    "categoria": "paseo",
+    "precio": 290000,
+    "descripcion": "Suficientemente ligera como para llevarla en el tren. Y con potencia de sobra para llevarte a la oficina. Equipada para pedalear por la ciudad. Muévete de una forma más rápida y sostenible.",
+    "img": "/images/products/Paseo.jpg"
+  },
+  {
+    "id": 8,
+    "marca": "moma",
+    "nombre": "Urban WRT500",
+    "rodado": "29",
+    "tamaño": "l",
+    "categoria": "paseo",
+    "precio": 600000,
+    "descripcion": "Ideal para tus paseos por la ciudad! Y con potencia de sobra para llevarte a la oficina. Equipada para pedalear por la ciudad. Muévete de una forma más rápida y sostenible.",
+    "img": "/images/products/Paseo-1.jpg"
+  },
+  {
+    "id": 9,
+    "marca": "fuji",
+    "nombre": "Racer3000",
+    "rodado": "29",
+    "tamaño": "l",
+    "categoria": "ruta",
+    "precio": 800000,
+    "descripcion": "Ligera como una pluma. Y con potencia de sobra para llevarte a la oficina. Equipada para pedalear por la ciudad. Muévete de una forma más rápida y sostenible.",
+    "img": "/images/products/Ruta.jpg"
+  },
+  {
+    "id": 10,
+    "marca": "wilier",
+    "nombre": "Pathfinder",
+    "rodado": "28",
+    "tamaño": "m",
+    "categoria": "ruta",
+    "precio": 900000,
+    "descripcion": "Extremadamente veloz. Y con potencia de sobra para llevarte a la oficina. Equipada para pedalear por la ciudad. Muévete de una forma más rápida y sostenible.",
+    "img": "/images/products/Ruta-1.jpg"
+  },
+  {
+    "id": 11,
+    "marca": "kestrel",
+    "nombre": "Triatlon",
+    "rodado": "29",
+    "tamaño": "l",
+    "categoria": "ruta",
+    "precio": 1500000,
+    "descripcion": "Calidad superior. Gana sola las carreras. Muévete de una forma más rápida y sostenible.",
+    "img": "/images/products/Tria.jpg"
+  }
+]

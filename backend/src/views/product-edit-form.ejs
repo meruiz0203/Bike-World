@@ -1,0 +1,129 @@
+<head>
+    <%- include("partials/head") %>
+    <script type="text/javascript" src="/js/products/product-edit-form-validator.js" defer></script>
+    <style>
+        .errorMsg {
+            display: none;
+            color: red;
+        }
+    
+        .display {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-light-grey">
+
+    <header class="bg-grey p-20">
+        <%- include("partials/header") %>
+    </header>
+
+    <main class="bg-img">
+        <form action="/bikes/<%= bike.id %>?_method=PUT" method="POST" class="create-form" enctype="multipart/form-data" id="form">
+          <h2 class="center">Editar Bicicleta</h2>
+          <div class="m-pic">
+                <label for="modelName">Nombre del modelo:</label>
+                <p>
+                <input type="text" id="modelName" name="modelName" class="control box-formulario"
+                value="<%= bike.ModelsByBrand.modelName %>">
+                <span class = "errorMsg" id="modelNameError"> </span>
+                </p>
+            </div>
+            <div class="red-text">
+              <% if (errors && errors.modelName){ %>
+                <%= errors.modelName.msg %>
+              <% } %>
+            </div>
+            <div class="m-pic">
+                <label for="category">Categoría de la bicicleta:</label> 
+                <select name="category" id="category"> 
+                 
+                    <% categories.forEach(category => { %>
+                      <option value="<%= category.name %>" <%= bike.category && bike.category.name === category.name ? 'selected' : '' %>><%= category.name %></option>
+                    <% }); %>
+                 
+                </select>
+              </div>
+              
+              <!-- Tamaños -->
+              <div class="m-pic">
+                <label for="size">Tamaño del cuadro:</label>
+                <select name="size" id="size">
+                    <% sizes.forEach(size => { %>
+                      <option value="<%= size.name %>" <%= bike.size && bike.size.name === size.name ? 'selected' : '' %>><%= size.name %></option>
+                    <% }); %>
+                </select>
+              </div>
+              
+              <!-- Colores -->
+              <div class="m-pic">
+                <label for="color">Color:</label>
+                <select name="color" id="color">
+                    <% colors.forEach(color => { %>
+                      <option value="<%= color.name %>" <%= bike.color && bike.color.name === color.name ? 'selected' : '' %>><%= color.name %></option>
+                    <% }); %>
+                </select>
+              </div>
+              
+              <!-- Marcas -->
+              <div class="m-pic">
+                <label for="brand">Marca del producto:</label>
+                <select name="brand" id="brand">
+                    <% brands.forEach(brand => { %>
+                      <option value="<%= brand.name %>" <%= bike.brand && bike.brand.name === brand.name ? 'selected' : '' %>><%= brand.name %></option>
+                    <% }); %>
+                </select>
+              </div>
+            <div class="m-pic">
+                <label for="price">Precio del producto:</label>
+                <p>
+                <input type="text" id="price" name="price" placeholder="$159.700" class="control box-formulario" 
+                value="<%=bike.price%>">
+                <span class = "errorMsg" id="priceError"> </span>
+              </p>
+            </div>
+            <div class="m-pic">
+                <label for="description">Descripción:</label>
+                <p> 
+                <textarea id="description" name="description" class="control box-formulario"><%= bike.description %></textarea>
+                <span class = "errorMsg" id="descriptionError"> </span>
+                </p>
+            </div>
+            <div class="red-text">
+              <% if (errors && errors.description){ %>
+                <p class="red-text"><%= errors.description.msg %> </p>
+              <% } %>
+              </div>  
+            <div class="m-pic">
+                <label for="image">Imagen del producto</label>
+                <p>
+                <input type="file" id="image" name="image" 
+                value="<%= bike.image %>">
+                <span class = "errorMsg" id="imageError"> </span>  
+                </p>
+            </div>
+            <div class="red-text">
+              <% if (errors && errors.image){ %>
+                <p class="red-text"><%= errors.image.msg %> </p>
+              <% } %>
+          </div>
+    <div class="m-pic">
+        <input type="submit" value="GUARDAR" class="boton-formulario"/>
+
+
+        <input type="reset" value="Borrar Formulario" class="boton-formulario"/>
+    </div>
+        </form>
+    <form action="/bikes/delete/<%= bike.id %>?_method=DELETE" method="POST" class="create-form">
+      <div class="m-pic">
+          <button type="submit" class="boton-formulario m-pic c-red"> ELIMINAR </button>
+      </div>
+  </form>   
+</main>
+
+    
+<%- include("partials/footer") %>
+
+</body>  
+</html>

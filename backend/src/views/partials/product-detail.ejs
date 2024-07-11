@@ -1,0 +1,72 @@
+<article class="mx-auto bg-white my-1 w-50 md-w-50 lg-w-25 b-product"> 
+
+    <% if (userData && userData.role == 1) { %> 
+    <div class="flex-buttom p-10"> 
+        <button type="button" class="boton-formulario">
+            <a href="/edit/<%= bike.id %>" class="c-white">Editar producto</a>
+        </button> 
+        <% } %>  
+        
+    </div> 
+   
+<div class="box-list">
+
+    <div>
+        <img class="flex-buy w-50 mx-auto m-pic a-center w-full" src="<%= bike.image %>" alt="Imagen del producto" />
+    </div>
+
+    <div class="bt-1 mx-auto border-grey p-1 relative flex flex-wrap">
+
+     <i class="fa-solid fa-truck truck-icon"></i>
+
+     <h3 class="p-10 "> 
+      Marca:  <%= bike.brand.name %>
+    </h3> 
+    
+    <h3 class="p-10 "> 
+        Modelo: <%= bike.ModelsByBrand && bike.ModelsByBrand.modelName ? bike.ModelsByBrand.modelName : 'Modelo no disponible' %>
+    </h3>
+    
+    <h3 class="text-xl mr-1">Precio $ <%= bike.price %>     
+     </h3>
+     
+    <h3 class="p-10 "> Talle:
+        <%= bike.size.name %>
+    </h3>
+
+    <h3 class="p-10 "> Color: 
+        <%= bike.color.name %>
+    </h3>
+
+    <h3 class="p-10 "> Categoria: 
+        <%= bike.category.name %>
+    </h3> 
+
+    <h3 class="p-10 "> Descripción: 
+        <%= bike.description %>
+    </h3>
+
+    <div class="flex-buttom p-10">
+            <form action="/cart" method="POST" class="boton-formulario">
+            <input type="hidden" name="productId" value="<%= bike.id %>">
+            <input type="hidden" name="productBrand" value="<%= bike.brand.name %>">
+            <input type="hidden" name="productModel" value="<%= bike.ModelsByBrand.name %>">
+
+            <input type="hidden" name="productColor" value="<%= bike.color.name %>">
+            <input type="hidden" name="productPrice" value="<%= bike.price %>">
+            <input type="hidden" name="productSize" value="<%= bike.size.name %>">
+            <input type="hidden" name="productCategory" value="<%= bike.category.name %>">
+            <input type="hidden" name="productImage" value="<%= bike.image %>">
+
+
+            <div class="flex-buttom p-10">
+            <button type="submit" class=" boton-formulario">Agregar al carrito</button>
+            </div>
+
+
+            
+            </form>
+        </div> 
+    </div>
+</div>
+</article>

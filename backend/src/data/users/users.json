@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "firstName": "Carlos",
+    "lastName": "Pagani",
+    "email": "fredmond0@clickbank.net",
+    "password": "dM4|4Zd\"",
+    "category": "Admin",
+    "avatar": "/images/avatars/polloCorazon.jpg",
+    "nombre": "",
+    "apellido": "",
+    "nacimiento": "",
+    "domicilio": "",
+    "NumContacto": "",
+    "contraseÃ±a": ""
+  },
+  {
+    "id": 2,
+    "firstName": "Horacio",
+    "lastName": "Russo",
+    "email": "dvanichkin1@webs.com",
+    "password": "dZ4#5k\"wHdlU7",
+    "category": "Admin",
+    "avatar": "/images/avatars/tostada.jpg"
+  },
+  {
+    "id": 3,
+    "firstName": "Silvina",
+    "lastName": "Lipoveski",
+    "email": "cgrimsdell2@cpanel.net",
+    "password": "oE0/0\\_mQy'T?#_",
+    "category": "Customer",
+    "avatar": "/images/avatars/tostada.jpg"
+  },
+  {
+    "id": 4,
+    "firstName": "Jorge",
+    "lastName": "Lafauci",
+    "email": "tshard3@tripod.com",
+    "password": "cI7*)LBWH280g",
+    "category": "Admin",
+    "avatar": "/images/avatars/pretzel.jpg"
+  },
+  {
+    "id": 5,
+    "firstName": "Luis",
+    "lastName": "Diaz",
+    "email": "aburroughes4@ask.com",
+    "password": "hG9&mzw1&w@Cr",
+    "category": "Admin",
+    "avatar": "/images/avatars/kipa.jpg"
+  },
+  {
+    "id": 6,
+    "firstName": "Hector",
+    "lastName": "Vangioni",
+    "email": "hdimeo5@economist.com",
+    "password": "vC6&x/T=g@.",
+    "category": "Admin",
+    "avatar": "/images/avatars/polloCorazon.jpg"
+  },
+  {
+    "id": 7,
+    "firstName": "Matias",
+    "lastName": "Kraneviter",
+    "email": "acowton6@yolasite.com",
+    "password": "zO4!faEjQ",
+    "category": "Customer",
+    "avatar": ""
+  },
+  {
+    "id": 8,
+    "firstName": "Ryan",
+    "lastName": "Goslin",
+    "email": "aleithgoe7@prweb.com",
+    "password": "mH9#7'8z",
+    "category": "Customer",
+    "avatar": "/images/avatars/jala.jpg"
+  },
+  {
+    "id": 9,
+    "firstName": "Marcelo",
+    "lastName": "Gallardo",
+    "email": "mdinning8@squidoo.com",
+    "password": "jR5?U{Ot\"N",
+    "category": "Admin",
+    "avatar": "/images/avatars/tostada.jpg"
+  },
+  {
+    "id": 10,
+    "firstName": "Daniel",
+    "lastName": "Galindez",
+    "email": "sstiebler9@wiley.com",
+    "password": "mB6\\\"yOjjMRm(cc",
+    "category": "Customer",
+    "avatar": "/images/avatars/kipa.jpg"
+  },
+  {
+    "id": "1b792bb1-d0d0-4f63-b2dc-9a41d4350d93",
+    "nombre": "Sebastian",
+    "apellido": "Montero",
+    "email": "sebamontero15@gmail.com",
+    "nacimiento": "2222-02-22",
+    "password": "$2b$05$tM0c38R/oFwPnlxSm8WHCeTKmjj8PVopu9KRwpzyQ5f8olf5T7hA.",
+    "NumContacto": 1138313027,
+    "domicilio": "Calle falsa 123",
+    "avatar": "/images/users/avatar-1697668248960.jpg"
+  },
+  {
+    "id": "98680ca7-f03d-45b7-9ebf-ff4969da0865",
+    "nombre": "Sebastian",
+    "apellido": "Montero",
+    "email": "seba@hotmail.com",
+    "nacimiento": "2222-02-22",
+    "password": "$2b$05$KGUPG3H4fFbY.d4qXW/jdeKJ7RAenpUXLziGYhwTIJaW1BDVHRN9S",
+    "NumContacto": 1138313027,
+    "domicilio": "Calle falsa 123",
+    "avatar": "/images/users/avatar-1697668722097.png"
+  },
+  {
+    "id": "af8bbcc1-2eb3-4ee2-b143-bc0e86f86d09",
+    "nombre": "Sebastian",
+    "apellido": "Montero",
+    "email": "sebamontero@hotmail.es",
+    "nacimiento": "2222-02-22",
+    "password": "$2b$05$1eY9kmVgsB8QC2XhqotVZ.yaFHHIlkEvdJjgAhady9MqJe0dVyl22",
+    "NumContacto": 1138313027,
+    "domicilio": "Calle falsa 123",
+    "avatar": "/images/users/avatar-1698709679663.jpg"
+  },
+  {
+
+  }
+]

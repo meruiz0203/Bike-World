@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include("partials/head") %>
+</head>
+
+<body class="bg-ligh-grey bg-img">
+    
+    <header class="bg-grey p-20">
+      <%- include("partials/header") %>  
+    </header>
+    
+    <main>
+      
+      <form action="" class="box-cart">
+
+      
+        <h1>Carrito de compras </h1>
+        
+        <img class="w-50 mx-auto m-pic" src="/images/enviobici.png" alt="Imagen del producto" />
+
+
+  
+    <tbody>
+
+    <% for (let i = 0; i < cartProducts.length; i++) { %>
+    
+    <tr>
+
+      
+      <div class="box-list imagen-con-zoom">
+       
+        
+        <img class="w-50 mx-auto m-pic center m-pic" src="<%= cartProducts[i].productImage %>" alt="Imagen del producto" />
+
+      <div class="p-10 m-right ">
+        <th> Marca:</th> 
+        <td><%= cartProducts[i].productBrand %></td>
+       
+        <!-- <th> Modelo:</th> 
+        <td><%= cartProducts[i].productModel %></td> -->
+
+        <th class="p-10 m-right "> Precio:</th>
+        <td >$ <%= cartProducts[i].productPrice %></td>
+        
+        <th> Tamaño:</th>
+        <td>$ <%= cartProducts[i].productSize %></td>
+
+       <th> Color:</th> 
+        <td><%= cartProducts[i].productColor %></td>
+
+        <th> Categoria:</th> 
+        <td><%= cartProducts[i].productCategory %></td>
+      </div>
+
+             
+
+<!-- BOTON ELIMINAR PRODUCTOO -->
+        <!-- <button class="blue-text" >Eliminar producto</button> -->
+
+ 
+      </div>
+    </tr>
+      <% } %>
+
+    </tbody>
+  
+  
+  <button class="blue-text boton-formulario" formaction="/empty">Vaciar Carrito</button>
+  
+
+
+<div class="flex-buy p-20"> 
+  <% if ( total ) { %> 
+  <h2>Total $ <span id="totalAmount"><%= total.toFixed(2) %></span><h2>
+  <% } else { %>
+    <h2>Total: $ 0 <h2>
+  <% } %> 
+
+</div>
+
+
+    <button class="blue-text boton-formulario" formaction="/pay">FINALIZAR COMPRA</button>
+      
+</form>
+
+
+</div>
+      
+</main>
+
+<%- include("partials/footer") %>
+
+
+</body>  
+</html>
+
+
+
+
+

@@ -1,0 +1,30 @@
+footer a:link {color: rgb(255, 255, 255); text-decoration: none }
+footer a:visited {color: white; text-decoration: none }
+
+.p-footer-i{
+    padding-left: 10px;
+    padding-right: 10px;
+} 
+
+.flex-footer{
+    display: flex;
+    justify-content: center;
+} 
+
+.box-footer{
+    
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #F3AA21;
+    text-align: center;
+    width: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+
+} 
+.padding-footer{
+    padding-top: 100px;
+    padding-bottom: 100px;
+} 
+

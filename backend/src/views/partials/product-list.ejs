@@ -1,0 +1,38 @@
+<article class="mx-auto bg-white my-1 w-50 md-w-50 lg-w-25 b-product">        
+    <div class="bt-1 border-grey p-1 relative flex flex-wrap">
+        <h2 class="flex-buttom p-10">Listado de Bicicletas</h2>
+
+        <% if (userData && userData.role == 1) { %> 
+       <div class="flex-buttom p-10">
+                    <button type="button" class="boton-formulario">
+                        <a href="/create" class="c-white">Crear producto</a>
+                    </button>
+                </div> 
+                <% } %>                
+
+        <div>
+            <div class="text-xl mr-1 mx-auto">
+               <% bikes.forEach(bike =>{ %>
+            </div>
+            
+            <div class="p-10 box-list imagen-con-zoom  "> 
+                
+                <a class=" " href="/bikes/<%= bike.id %>">
+
+                <img class="flex-buy w-50 mx-auto m-pic a-center w-full" src="<%= bike.image %>" alt="Imagen del producto" />
+
+                <h3 class="text-price"><%= bike.brand.name %></h3>
+                <p class="text-price"><%= bike.ModelsByBrand.modelName %></p>
+
+                <p class="text-price"> $ <%= bike.price  %> </p> 
+                <p class="text-price"><%= bike.description  %> </p>
+
+
+            </a>
+            
+                <% }) %>
+            </div> 
+                  
+        </div>
+   
+</article>

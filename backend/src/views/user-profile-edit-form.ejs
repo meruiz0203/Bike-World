@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include("partials/head") %>
+  <script type="text/javascript" src="/js/users/user-profile-edit-form-validator.js" defer></script>
+  <style>
+      .errorMsg {
+          display: none;
+          color: red;
+      }
+  
+      .display {
+          display: block;
+      }
+  </style>
+</head>
+
+<body class="bg-ligh-grey bg-img">
+    
+    <header class="bg-grey p-20">
+      <%- include("partials/header") %>
+    </header>
+    <main>
+        <form action="/<%= user.id %>/edit?_method=PUT" method="post" enctype="multipart/form-data" class="vw-90 bg-register" id="form">
+        <h1 class="register">Edita tu perfil</h1>
+        <div class="m-pic">
+            <label for="firstName">Nombre:</label>
+            <p>
+            <input type="text" name="firstName" id="firstName" 
+            value="<%= user.firstName %>">
+            <span class = "errorMsg" id="firstNameError"> </span>
+          </p>
+          </div> 
+
+          <div class="red-text">
+            <% if (errors && errors.firstName) { %>
+            <%= errors.firstName.msg %>
+            <% } %>
+          </div> 
+
+          <div class="m-pic">
+            <label for="lastName">Apellido:</label>
+          <p>
+            <input type="text" name="lastName" id="lastName" 
+            value="<%= user.lastName %>">
+            <span class = "errorMsg" id="lastNameError"> </span>
+          </p>
+          </div>
+
+          <div class="red-text">
+            <% if (errors && errors.lastName) { %>
+            <%= errors.lastName.msg %>
+            <% } %>
+          </div>   
+
+          <div class="m-pic">
+            <label for="birthday">Fecha de nacimiento:</label>
+            <input type="date" name="birthday" id="birthday" 
+            value="<%= user.birthday %>">
+          </div> 
+
+          <div class="red-text">
+            <% if (errors && errors.birthday) { %>
+            <%= errors.birthday.msg %>
+            <% } %>
+          </div>  
+
+          <div class="m-pic">
+            <label for="address">Domicilio:</label>
+          <p>
+            <input type="text" name="address" id="address" 
+            value="<%= user.address %>">
+            <span class = "errorMsg" id="addressError"> </span>
+          </p>
+          </div> 
+
+          <div class="red-text">
+            <% if (errors && errors.address) { %>
+            <%= errors.address.msg %>
+            <% } %>
+          </div>  
+
+          <div class="m-pic">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" 
+            value="<%= user.email %>">
+            <span class = "errorMsg" id="emailError"> </span>
+          </div>  
+
+          <div class="red-text">
+            <% if (errors && errors.email) { %>
+            <%= errors.email.msg %>
+            <% } %>
+          </div>   
+
+          <div class="m-pic">
+            <label for="phone">Numero de contacto:</label>
+          <p>
+            <input type="text" name="phone" id="phone" 
+            value="<%= user.phone %>">
+            <span class = "errorMsg" id="phoneError"> </span>
+          </p>
+          </div>  
+
+          <div class="m-pic">
+            <label for="password">Nueva Contraseña:</label>
+          <p>
+            <input type="password" name="password" id="password" >
+            <span class = "errorMsg" id="passwordError"> </span>
+          </p>
+          </div>  
+
+          <div class="red-text">
+            <% if (errors && errors.password) { %>
+            <%= errors.password.msg %>
+            <% } %>
+          </div>  
+
+          <div class="m-pic">
+            <label for="avatar">Avatar:</label>
+            <p>
+              <input type="file" id="avatar" name="avatar">
+              <span class = "errorMsg" id="avatarError"> </span>
+            </p>  
+          </div> 
+
+          <div class="red-text">
+            <% if (errors && errors.avatar) { %>
+            <%= errors.avatar.msg %>
+            <% } %>
+          </div>   
+
+          <div class="m-pic">
+          <input type="submit" value="GUARDAR" class="boton-formulario"/>
+          <input type="reset" value="Borrar Formulario" class="boton-formulario"/>
+        
+        </div> 
+    </form>
+
+    <form action="/<%= user.id %>?_method=DELETE" method="POST" class="bg-register flex-buttom">
+          <div class="m-pic">
+          <button type="submit" class="boton-formulario m-pic c-red"> ELIMINAR </button>   
+      </div>    
+      
+          </form>
+  </main>
+    
+  <%- include("partials/footer") %>
+
+  </body>  
+</html>

@@ -1,0 +1,290 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../assets/img/portada.png'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+}
+
+.dashboard {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-gap: 0;
+    grid-template-columns: 300px auto;
+    grid-template-rows: 80px auto;
+    grid-template-areas: 'menu search' 'menu content';
+}
+/*button*/
+button {
+  background-color: #ecc308; /* Color de fondo verde */
+  padding: 10px 15px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño del texto */
+  border: none; /* Sin borde */
+  border-radius: 10px;
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s ease; 
+  color: black; 
+  position: relative; /* Posición absoluta */
+  top: 10px;
+  bottom: 5px; /* Espacio desde la parte inferior del formulario */
+  left: 50%; /* Ubicación horizontal en el centro */
+  transform: translateX(-50%);
+  font-weight: bold; 
+}
+
+button:hover {
+  background-color: #2f10df; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/*bike*/
+
+.bike {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+}
+  
+  .bike img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+  
+  .bike h2 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+  
+  .bike p {
+    font-size: 1em;
+    margin-bottom: 4px;
+}
+
+.bike-card {
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.bike-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: black;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.bold {
+  font-weight: bold;
+}
+
+.bike-info {
+  font-size: 1rem;
+  color: #333;
+}
+.bike-card-list{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+}
+.create-bike {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333; 
+  font-size: 16px;
+  font-weight: bold; 
+
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+/* Estilos para el mensaje de éxito */
+.success-message {
+  background-color: #e9a209; 
+  color: rgb(12, 12, 12);
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+/*fondo negro*/
+
+  .bg-grey{
+    background-color: #000000}
+
+  /*header*/
+  header {
+    position: relative;
+    text-align: center;
+  }
+  
+  .logo-container {
+    position: absolute;
+    top: 10px; 
+    left: 10px; 
+  }
+  
+  .logo-container img {
+    width: 100px; 
+    height: auto;
+  }
+  
+  .portada {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    display: block;
+  }
+
+  /*Card*/
+  .card-container {
+    display: flex;
+    justify-content: space-evenly; 
+  }
+  .card {
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+    height: 350px; /* Ajusta la altura según tus necesidades */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px; /* Aumenta el espacio interno */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .card-title {
+    font-size: 1.1rem; /* Ajusta el tamaño según sea necesario */
+    margin-bottom: 8px;
+    color: rgb(247, 137, 4); /* Cambiado a negro */
+  }
+  .card-metric { 
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+  }
+
+/* Estilos para la lista de usuarios */
+
+
+.user-card {
+  width: 250px; /* Ajusta el ancho según tus necesidades */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.user-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.user-card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.user-image {
+  width: 50%; 
+  border-radius: 8px; 
+  margin-top: 10px;
+}
+
+/*categorias*/
+
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%
+}
+.category-list {
+  list-style: none;
+  padding: 0;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.bike-info {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.bike-image {
+  max-width: 100px;
+}
+
+
+  /*footer*/
+
+  .footer {
+    margin-top: auto;
+    padding: 20px; 
+    background-color: #333; 
+    color: white; 
+    text-align: center;
+  }
+
+.flex-footer{
+  display: flex;
+  justify-content: center;
+} 
+.box-footer{   
+  background-color: #F3AA21;
+  text-align: center;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: black;
+}
+
+
+
+ 
+
